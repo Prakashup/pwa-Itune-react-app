@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Card from './components/card/Card';
 import Search from './components/search/Search';
-
+import Header from './components/header/Header';
 const Loading = () => <div>Loading...</div>;
 
 const SearchComp = Loadable({
@@ -19,6 +19,7 @@ const CardComp = Loadable({
 const App = () => (
   <Router>
     <div>
+    <Header />
       <ul>
         <li><Link to="/">Search</Link></li>
         <li><Link to="/card">Upvote</Link></li>
