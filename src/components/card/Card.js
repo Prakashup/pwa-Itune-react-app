@@ -5,7 +5,7 @@ class Card extends Component {
   render() {
     return (
     	<div className="card">
-			<h1>Card 1</h1>
+			   <h1>Card 1</h1>
     	</div>
     );
   }
