@@ -5,6 +5,9 @@
   align-items: center;
 }
 
+.menu {
+  overflow: hidden;
+}
 .menu__link {
   padding: 2px;
 }

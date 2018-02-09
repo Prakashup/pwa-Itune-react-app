@@ -13,7 +13,7 @@ const SearchComp = Loadable({
 
 const CardComp = Loadable({
   loader: () => import('./components/card/Card'),
-  loading: Loading,
+  loading: Loading
 });
 
 const App = () => (

@@ -30,7 +30,7 @@ class Search extends Component {
           value={ options[0] }
           placeholder="Select an option"
         />
-        <input id="searchField" type="text" placeholder="Search" class="search-inpu-text" />
+        <input id="searchField" type="text" placeholder="Search" className="search-inpu-text" />
 
       </div>
     );
