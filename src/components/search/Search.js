@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
 import Dropdown from 'react-dropdown';
 import './search.css';
+import  { getAlbumList } from '../../actions/SearchAction';
 
 class Search extends Component {
   constructor(props) {
     super(props);
+    this.onClickSearch = this.onClickSearch.bind(this);
+    console.log(this.props);
     this.state = {
     };
+  }
+
+  onClickSearch() {
+    return true;
   }
 
   render() {
@@ -30,7 +37,7 @@ class Search extends Component {
           value={ options[0] }
           placeholder="Select an option"
         />
-        <input id="searchField" type="text" placeholder="Search" className="search-inpu-text" />
+        <input id="searchField" type="text" placeholder="Search" onClick={ this.props.searchAction } className="search-inpu-text" />
 
       </div>
     );

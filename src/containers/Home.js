@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Search from '../search/Search';
-import List from '../list/List';
+import SearchContainer from './SearchContainer';
+import List from '../components/list/List';
 
 class Home extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <Search />
+        <SearchContainer />
         <List />
       </div>
     );
