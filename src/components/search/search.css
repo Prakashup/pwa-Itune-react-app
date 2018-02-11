@@ -4,6 +4,15 @@
     display: flex;
     width: 500px;
     margin: 0 auto;
+    position: relative;
+}
+
+.searchDropdown {
+    position: absolute;
+    z-index: 99;
+}
+input.search-input-text {
+  margin-left: 160px;
 }
 
 .dropdown {

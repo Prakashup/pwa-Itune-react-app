@@ -1,22 +1,15 @@
-export const getAlbumList = () => {
-
-  let list = {
-    "resultCount": 2,
-    "results": [
-      {
-        "wrapperType": "track",
-      },
-      {
-        "wrapperType": "track",
-      }
-    ]
-  };
-  console.log('inside action', list.results);
-
-  return {
-    type: 'get_albums',
-    payload: list
+import axios from 'axios';
+export function getAlbumList(searchTerm){
+  return (dispatch)=>{
+    return axios.get(`https://itunes-search-iypahdbpmn.now.sh/api/search?media=all&term=${searchTerm}`).then((response)=> {
+      dispatch(albumList(response.data));
+    })
   }
 }
 
-//export const boundgetAlbumList = item => dispatch(getAlbumList(item))
+export function albumList(res){
+  return {
+    type: 'get_albums',
+    payload: res
+  }
+}

@@ -7,11 +7,11 @@ class Card extends Component {
       <div className="card-wrapper">
         <div className="card u-flex">
             <div className="card-image waves-effect waves-block waves-light">
-                <img alt="img" className="activator" src="http://is1.mzstatic.com/image/thumb/Music6/v4/8e/1c/42/8e1c4257-d43f-3263-b002-301b83a8ef94/source/100x100bb.jpg" />
+                <img alt="img" className="activator" src={this.props.cardDetails.artworkUrl100} />
             </div>
             <div className="card-content u-flex">
                 <div className="card-header u-flex u-pointer">
-                    <span className="card-title grey-text text-darken-4 activator">Solid Gold Hits</span>
+                    <span className="card-title grey-text text-darken-4 activator">{this.props.cardDetails.collectionName}</span>
                     <i className="material-icons right activator">more_vert</i>
                 </div>
                 <div className="card-actions u-flex">
@@ -21,7 +21,8 @@ class Card extends Component {
                 </div>
             </div>
             <div className="card-reveal">
-                <span className="card-title u-flex grey-text text-darken-4">Ch-Check It Out<i className="material-icons right">close</i></span>
+                <span className="card-title grey-text text-darken-4">{this.props.cardDetails.trackName}</span>
+                <span className="card-title u-flex grey-text text-darken-4">{this.props.cardDetails.artistName}<i className="material-icons right">close</i></span>
             </div>
         </div>
     </div>

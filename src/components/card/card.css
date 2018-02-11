@@ -11,7 +11,9 @@
 .card .card-content .card-title {
     line-height: normal;
 }
-
+.card .card-reveal {
+  padding: 10px;
+}
 .card .card-header i,
 .card .card-reveal i {
     position: absolute;

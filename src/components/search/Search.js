@@ -6,14 +6,15 @@ import  { getAlbumList } from '../../actions/SearchAction';
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.onClickSearch = this.onClickSearch.bind(this);
-    console.log(this.props);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
     this.state = {
     };
   }
 
-  onClickSearch() {
-    return true;
+  handleKeyUp(e) {
+    if(e.keyCode === 13){
+      this.props.searchAction(e.target.value);
+    }
   }
 
   render() {
@@ -30,6 +31,7 @@ class Search extends Component {
       ];
     return (
       <div className="searchWrapper">
+        <div className="searchDropdown">
         <Dropdown
           className="dropdown"
           options={options}
@@ -37,10 +39,15 @@ class Search extends Component {
           value={ options[0] }
           placeholder="Select an option"
         />
-        <input id="searchField" type="text" placeholder="Search" onClick={ this.props.searchAction } className="search-inpu-text" />
+        </div>
+        <input id="searchField" type="text"
+          placeholder="Search"
+          onKeyUp={this.handleKeyUp}
+          className="search-input-text" />
 
       </div>
     );
   }
 }
+
 export default Search;

@@ -1,4 +1,4 @@
-export default(state=[], action) => { console.log('inside reducer');
+export default(state=[], action) => {
   switch(action.type) {
     case 'get_albums':
     return Object.assign({}, state, {
