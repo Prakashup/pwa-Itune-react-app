@@ -11,6 +11,12 @@ const HomeComp = Loadable({
   loading: Loading,
 });
 
+const LoginComp = Loadable({
+  loader: () => import('./components/login/Login'),
+  loading: Loading
+});
+
+
 const UpvoteItemComp = Loadable({
   loader: () => import('./components/upvotes/UpvoteItem'),
   loading: Loading
@@ -19,13 +25,41 @@ const UpvoteItemComp = Loadable({
 const App = () => (
   <Router>
     <div>
-      <Header />
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/UpvoteItem">Upvote</Link></li>
-      </ul>
-
+    <div id="header"><div className="navbar-fixed">
+      <nav className="nav dark-primary-color">
+        <Link to="/"><h1 id="appHeader" role="button" className="title u-pointer">Music finder</h1></Link>
+        <div className="spacer"></div>
+        <ul className="menu">
+          <li className="menu__item">
+            <span href="javascript:void(0);" className="menu__link user_info">
+              <i className="material-icons">person</i>
+              Guest
+            </span>
+          </li>
+          <li className="menu__item ">
+            <Link to="/login" id="loginLink" className="menu__link">
+              <i className="material-icons">input</i>
+              <span className="icon-text">Login/Signup</span>
+            </Link>
+          </li>
+          <li className="menu__item active">
+            <Link to="/" id="searchLink" className="menu__link">
+              <i className="material-icons">search</i>
+              <span className="icon-text">Search</span>
+            </Link>
+          </li>
+          <li className="menu__item ">
+            <Link to="/UpvoteItem" className="menu__link">
+              <i className="material-icons">favorite</i>
+              <span className="icon-text">Upvotes</span>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    </div>
       <Route exact path="/" component={ HomeComp }/>
+      <Route exact path="/login" component={ LoginComp }/>
       <Route exact path="/UpvoteItem" component={ UpvoteItemComp }/>
     </div>
   </Router>

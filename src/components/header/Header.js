@@ -7,7 +7,7 @@ class Card extends Component {
     return (
       <div id="header"><div className="navbar-fixed">
         <nav className="nav dark-primary-color">
-          <h1 id="appHeader" role="button" className="title u-pointer">Music finder</h1>
+          <Link to="/#UpvoteItem"><h1 id="appHeader" role="button" className="title u-pointer">Music finder</h1></Link>
           <div className="spacer"></div>
           <ul className="menu">
             <li className="menu__item">
