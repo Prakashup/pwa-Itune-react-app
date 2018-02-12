@@ -18,8 +18,8 @@ class List extends Component {
     const noOfCards= this.state.cardList;
     return (
       <div className="list-wrapper">
-      {noOfCards.map(function(name, index){
-                    return <Card key={'card'+ index} cardDetails={name} />;
+      {noOfCards.map((name, index) => {
+                    return <Card key={'card'+ index} addUpvote={this.props.upvoteActionAdd } cardDetails={name} />;
                   })}
       </div>
     );

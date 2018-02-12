@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import List from '../components/list/List';
 import { connect } from 'react-redux';
 import * as searchActionCreator from '../actions/SearchAction';
+import * as upvoteActionCreator from '../actions/UpvotesAction';
 
 class ListContainer extends Component {
 
   render() {
     return (
       <div>
-        <List listOfAlbums={this.props.albumListProp} />
+        <List listOfAlbums={this.props.albumListProp} upvoteActionAdd={this.props.addUpvote} />
       </div>
     );
   }
@@ -21,4 +22,4 @@ const mapStateToProps = (state,props) => {
 };
 
 
-export default connect(mapStateToProps)(ListContainer);
+export default connect(mapStateToProps, upvoteActionCreator)(ListContainer);

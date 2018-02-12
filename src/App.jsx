@@ -11,7 +11,7 @@ const HomeComp = Loadable({
 });
 
 const LoginComp = Loadable({
-  loader: () => import('./components/login/Login'),
+  loader: () => import('./containers/LoginContainer'),
   loading: Loading
 });
 

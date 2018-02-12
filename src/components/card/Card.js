@@ -15,6 +15,10 @@ class Card extends Component {
                     <i className="material-icons right activator">more_vert</i>
                 </div>
                 <div className="card-actions u-flex">
+                    <i className="material-icons like-icon u-pointer" onClick={ this.props.addUpvote.bind(this,this.props.cardDetails)}>
+                        thumb_up
+                        <input type="hidden" value="1055074478" />
+                    </i>
                     <a target="_blank" href="https://itunes.apple.com/us/album/ch-check-it-out/724767716?i=724767861&amp;uo=4">
                         More
                     </a>
@@ -22,7 +26,8 @@ class Card extends Component {
             </div>
             <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">{this.props.cardDetails.trackName}</span>
-                <span className="card-title u-flex grey-text text-darken-4">{this.props.cardDetails.artistName}<i className="material-icons right">close</i></span>
+                <span className="card-title u-flex grey-text text-darken-4">{this.props.cardDetails.artistName}
+                <i className="material-icons right">close</i></span>
             </div>
         </div>
     </div>
