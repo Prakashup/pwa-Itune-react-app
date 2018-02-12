@@ -1,8 +1,11 @@
+.upvoteContainer {
+	margin: 30px;
+}
 .upvoteItem {
 	background: #ddd;
 	display: flex;
-	margin: 10px 0;
-	padding: 10px;
+	margin: 2px 0;
+	padding: 0px;
 	font-size: 20px;
 	background: var(--text-primary-color);
 	justify-content: space-between;

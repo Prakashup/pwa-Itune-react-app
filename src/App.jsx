@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import UpvoteItem from './components/upvotes/UpvoteItem';
 import Header from './components/header/Header';
 
 const Loading = () => <div>Loading...</div>;
@@ -17,8 +16,8 @@ const LoginComp = Loadable({
 });
 
 
-const UpvoteItemComp = Loadable({
-  loader: () => import('./components/upvotes/UpvoteItem'),
+const UpvoteComp = Loadable({
+  loader: () => import('./containers/UpvotesContainer'),
   loading: Loading
 });
 
@@ -49,7 +48,7 @@ const App = () => (
             </Link>
           </li>
           <li className="menu__item ">
-            <Link to="/UpvoteItem" className="menu__link">
+            <Link to="/Upvotes" className="menu__link">
               <i className="material-icons">favorite</i>
               <span className="icon-text">Upvotes</span>
             </Link>
@@ -60,7 +59,7 @@ const App = () => (
     </div>
       <Route exact path="/" component={ HomeComp }/>
       <Route exact path="/login" component={ LoginComp }/>
-      <Route exact path="/UpvoteItem" component={ UpvoteItemComp }/>
+      <Route exact path="/Upvotes" component={ UpvoteComp }/>
     </div>
   </Router>
 );

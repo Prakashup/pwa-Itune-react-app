@@ -13,6 +13,8 @@
 }
 input.search-input-text {
   margin-left: 160px;
+  background: #fff;
+  padding-left: 10px;
 }
 
 .dropdown {
@@ -22,8 +24,12 @@ input.search-input-text {
   background: #f1f1f1;
   justify-content: center;
   align-self: center;
-  padding: 10px 0;
   text-align: center;
+}
+.Dropdown-placeholder {
+  background: #2962FF;
+  color: #fff;
+  padding: 10px 0;
 }
 .Dropdown-option {
   padding: 10px 0;

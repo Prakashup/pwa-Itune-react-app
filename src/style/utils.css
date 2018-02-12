@@ -4,3 +4,7 @@
 .u-pointer {
     cursor: pointer;
 }
+
+body {
+ background: #eee;
+}
