@@ -19,10 +19,15 @@ class List extends Component {
     return (
       <div className="list-wrapper">
       {noOfCards.map((name, index) => {
-                    return <Card key={'card'+ index} addUpvote={this.props.upvoteActionAdd } cardDetails={name} />;
+                    return <Card key={'card'+ index}
+                            addUpvote={this.props.upvoteActionAdd }
+                            cardDetails={name}
+                            loginProp ={ this.props.loginStatus }
+                            />;
                   })}
       </div>
     );
   }
 }
 export default List;
+//loginState={ this.prop.loginStatus

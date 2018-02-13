@@ -2,7 +2,19 @@ import React, {Component} from 'react';
 import './card.css';
 
 class Card extends Component {
+
   render() {
+    var loggedIn = this.props.loginProp;
+    var loginButton;
+    if (loggedIn) {
+      loginButton = <i className="material-icons like-icon u-pointer"
+          onClick={ this.props.addUpvote.bind(this,this.props.cardDetails)}>
+          thumb_up
+          <input type="hidden" value="1055074478" />
+      </i>;
+    } else {
+      loginButton = <span></span>;
+    }
     return (
       <div className="card-wrapper">
         <div className="card u-flex">
@@ -15,10 +27,8 @@ class Card extends Component {
                     <i className="material-icons right activator">more_vert</i>
                 </div>
                 <div className="card-actions u-flex">
-                    <i className="material-icons like-icon u-pointer" onClick={ this.props.addUpvote.bind(this,this.props.cardDetails)}>
-                        thumb_up
-                        <input type="hidden" value="1055074478" />
-                    </i>
+                {loginButton}
+
                     <a target="_blank" href="https://itunes.apple.com/us/album/ch-check-it-out/724767716?i=724767861&amp;uo=4">
                         More
                     </a>

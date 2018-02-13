@@ -4,8 +4,9 @@ export function postLogin(email,pwd){
     return axios.post(`https://itunes-search-iypahdbpmn.now.sh/api/accounts/login`, {email:email, password: pwd }).then((response)=> {
       if(response.data.success){
         sessionStorage.setItem('token', response.data.token);
-      }
-      dispatch(login(response.data));
+        dispatch(login(true));
+      } else dispatch(login(false));
+
     })
   }
 }
